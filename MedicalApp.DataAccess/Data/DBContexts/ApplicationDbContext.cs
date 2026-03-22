@@ -1,0 +1,21 @@
+﻿namespace MedicalApp.DataAccess.Data.DBContexts
+{
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+
+        }
+
+        #region Tables In DataBase
+
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostImage> PostImages { get; set; }
+        public DbSet<FavoritePost> FavoritePosts { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        #endregion
+
+    }
+}

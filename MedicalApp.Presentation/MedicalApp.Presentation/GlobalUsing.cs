@@ -1,0 +1,18 @@
+﻿global using MedicalApp.Presentation.Extensions;
+global using MedicalApp.DataAccess.Data.DBContexts;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore;
+global using MedicalApp.BusinessLogic.IServices;
+global using MedicalApp.Infrastructure.Utlites;
+global using MedicalApp.BusinessLogic.ExtensionMethod;
+global using MedicalApp.BusinessLogic.DTOs.Posts;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using MedicalApp.BusinessLogic;
+global using Microsoft.IdentityModel.Tokens;
+global using System.Text;
+global using MedicalApp.BusinessLogic.DTOs.AuthenticationDto;
+global using Microsoft.AspNetCore.Diagnostics;
+global using MedicalApp.DataAccess.HandleExceptions;
+
+
