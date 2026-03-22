@@ -13,7 +13,7 @@ Features
 
 Developed using .NET with a 3-tier architecture and clean code principles. Responsible for building RESTful APIs, handling data processing, and integrating AI models.
 
- 🧰 Technologies
+ Technologies
 
  ASP.NET Core
  REST APIs
