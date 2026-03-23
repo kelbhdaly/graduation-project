@@ -32,3 +32,4 @@ D:\LungCare\MedicalApp.Infrastructure\obj\Debug\net8.0\MedicalApp.Infrastructure
 D:\LungCare\MedicalApp.Infrastructure\obj\Debug\net8.0\refint\MedicalApp.Infrastructure.dll
 D:\LungCare\MedicalApp.Infrastructure\obj\Debug\net8.0\MedicalApp.Infrastructure.pdb
 D:\LungCare\MedicalApp.Infrastructure\obj\Debug\net8.0\ref\MedicalApp.Infrastructure.dll
+D:\LungCare\MedicalApp.Infrastructure\obj\Debug\net8.0\MedicalApp.Infrastructure.sourcelink.json

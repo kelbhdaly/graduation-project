@@ -22,8 +22,8 @@ namespace MedicalApp.Presentation.Controllers
         [HttpDelete]
         public async Task<IActionResult> RemoveFromFavorites([FromBody] AddToFavoriteDto addToFavoriteDto)
         {
-            await _favoriteService.RemoveFromFavoriteAsync(addToFavoriteDto);
-            return NoContent();
+           var result = await _favoriteService.RemoveFromFavoriteAsync(addToFavoriteDto);
+            return Ok(result);
         }
         [HttpGet]
         public async Task<IActionResult> GetFavoritePosts()

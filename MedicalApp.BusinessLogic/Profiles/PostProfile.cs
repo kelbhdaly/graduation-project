@@ -5,7 +5,8 @@
         public PostProfile()
         {
             CreateMap<Post, PostDto>().ForMember(dest => dest.DoctorName,
-                opt => opt.MapFrom(src => src.Doctor.ApplicationUser.UserName))
+                opt => opt.MapFrom(src => src.Doctor != null
+                && src.Doctor.ApplicationUser != null ? src.Doctor.ApplicationUser.UserName : "Unknown"))
                 .ForMember(dest => dest.ImageUrls, opt => opt.MapFrom(src => src.PostImages));
 
             CreateMap<PostImage, PostImageDto>()

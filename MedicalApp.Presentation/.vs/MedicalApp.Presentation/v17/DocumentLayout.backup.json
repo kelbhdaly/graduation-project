@@ -3,24 +3,43 @@
   "WorkspaceRootPath": "D:\\LungCare\\MedicalApp.Presentation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\migrations\\20260321193957_editetablefposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\services\\favoritepostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\models\\favoritepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\extensions\\identityregisteration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\extensions\\identityregisteration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\profiles\\postprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\models\\favoritepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\services\\favoritepostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\iservices\\ifavoritepostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\valueresolver\\postimageurlresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\favoritepostsdto\\favoritepostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\postsdto\\postdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\migrations\\20260321193957_editetablefposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\extensions\\identityregisteration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\extensions\\identityregisteration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\controllers\\authenticationescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,50 +68,141 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20260321193957_EditeTableFPosts.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "FavoriteController.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\FavoriteController.cs",
+              "RelativeDocumentMoniker": "MedicalApp.Presentation\\Controllers\\FavoriteController.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\FavoriteController.cs",
+              "RelativeToolTip": "MedicalApp.Presentation\\Controllers\\FavoriteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T19:39:58.255Z",
+              "WhenOpened": "2026-03-23T15:28:06.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "PostProfile.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Profiles\\PostProfile.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Profiles\\PostProfile.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Profiles\\PostProfile.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Profiles\\PostProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:01:53.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IFavoritePostService.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IFavoritePostService.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\IServices\\IFavoritePostService.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IFavoritePostService.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\IServices\\IFavoritePostService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T14:54:50.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FavoritePost.cs",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Models\\FavoritePost.cs",
               "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\Models\\FavoritePost.cs",
               "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Models\\FavoritePost.cs",
               "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\Models\\FavoritePost.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-21T19:38:56.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FavoritePostService.cs",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\FavoritePostService.cs",
               "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\FavoritePostService.cs",
               "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\FavoritePostService.cs",
               "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\FavoritePostService.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAYwFwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAA3wFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-21T19:36:08.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "PostService.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwJIAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:13:11.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PostsController.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\PostsController.cs",
+              "RelativeDocumentMoniker": "MedicalApp.Presentation\\Controllers\\PostsController.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\PostsController.cs*",
+              "RelativeToolTip": "MedicalApp.Presentation\\Controllers\\PostsController.cs*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAowA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:16:58.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PostImageUrlResolver.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\ValueResolver\\PostImageUrlResolver.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\ValueResolver\\PostImageUrlResolver.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\ValueResolver\\PostImageUrlResolver.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\ValueResolver\\PostImageUrlResolver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T15:12:04.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FavoritePostDto.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\FavoritePostsDto\\FavoritePostDto.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\FavoritePostsDto\\FavoritePostDto.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\FavoritePostsDto\\FavoritePostDto.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\FavoritePostsDto\\FavoritePostDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T14:52:45.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PostDto.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\PostsDto\\PostDto.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\PostsDto\\PostDto.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\PostsDto\\PostDto.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\PostsDto\\PostDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T14:59:30.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "IdentityRegisteration.cs",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Extensions\\IdentityRegisteration.cs",
               "RelativeDocumentMoniker": "MedicalApp.Presentation\\Extensions\\IdentityRegisteration.cs",
@@ -100,12 +210,11 @@
               "RelativeToolTip": "MedicalApp.Presentation\\Extensions\\IdentityRegisteration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T19:01:21.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T19:01:21.735Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "AuthenticationService.cs",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
               "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
@@ -113,12 +222,11 @@
               "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
               "ViewState": "AgIAAIoAAAAAAAAAAAASwLAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T18:50:04.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T18:50:04.912Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "JwtRegistration.cs",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Extensions\\JwtRegistration.cs",
               "RelativeDocumentMoniker": "MedicalApp.Presentation\\Extensions\\JwtRegistration.cs",
@@ -126,12 +234,11 @@
               "RelativeToolTip": "MedicalApp.Presentation\\Extensions\\JwtRegistration.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAQwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T18:33:50.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T18:33:50.132Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Program.cs",
               "RelativeDocumentMoniker": "MedicalApp.Presentation\\Program.cs",
@@ -139,38 +246,23 @@
               "RelativeToolTip": "MedicalApp.Presentation\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAgwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T18:28:04.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T18:28:04.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PostsController.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\PostsController.cs",
-              "RelativeDocumentMoniker": "MedicalApp.Presentation\\Controllers\\PostsController.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\PostsController.cs",
-              "RelativeToolTip": "MedicalApp.Presentation\\Controllers\\PostsController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAowBEAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "20260321193957_EditeTableFPosts.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
+              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260321193957_EditeTableFPosts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T18:16:58.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T19:39:58.255Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PostService.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\PostService.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAwwJIAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T18:13:11.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "AuthenticationesController.cs",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\AuthenticationesController.cs",
               "RelativeDocumentMoniker": "MedicalApp.Presentation\\Controllers\\AuthenticationesController.cs",
@@ -183,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\appsettings.json",
               "RelativeDocumentMoniker": "MedicalApp.Presentation\\appsettings.json",
@@ -191,8 +283,7 @@
               "RelativeToolTip": "MedicalApp.Presentation\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-21T19:03:36.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T19:03:36.927Z"
             }
           ]
         },

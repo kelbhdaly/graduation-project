@@ -3,8 +3,8 @@
     public class FavoritePost
     {
         public int Id { get; set; }
-        public string UserId { get; set; }
+        public string UserId { get; set; } = default!;
         public int PostId { get; set; }
-        public Post Post { get; set; }
+        public Post Post { get; set; } = default!;
     }
 }

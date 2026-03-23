@@ -28,3 +28,4 @@ D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.d
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\refint\MedicalApp.BusinessLogic.dll
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.pdb
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\ref\MedicalApp.BusinessLogic.dll
+D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.sourcelink.json

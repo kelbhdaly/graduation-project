@@ -2,10 +2,10 @@
 {
     public interface IFavoritePostService
     {
-        Task<FavoritePost> AddToFavoriteAsync(AddToFavoriteDto favoritePostsDto);
-
-        Task RemoveFromFavoriteAsync(AddToFavoriteDto favoritePostsDto);
+        Task<FavoritePostDto> AddToFavoriteAsync(AddToFavoriteDto favoritePostsDto);
 
         Task<List<PostDto>> GetFavoritePostsAsync();
+        Task<string> RemoveFromFavoriteAsync(AddToFavoriteDto favoritePostsDto);
+
     }
 }

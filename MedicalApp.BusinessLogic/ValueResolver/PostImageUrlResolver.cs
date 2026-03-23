@@ -12,9 +12,12 @@
         {
             var request = _httpContextAccessor.HttpContext?.Request;
 
-            var baseUrl = $"{request?.Scheme}://{request?.Host}";
+            if (request == null)
+                return source.ImageUrl;
 
-            return baseUrl + source.ImageUrl;
+            var baseUrl = $"{request.Scheme}://{request.Host}";
+
+            return $"{baseUrl}{source.ImageUrl}";
         }
     }
 }

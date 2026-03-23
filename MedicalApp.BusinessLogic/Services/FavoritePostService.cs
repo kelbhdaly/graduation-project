@@ -13,9 +13,17 @@
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public async Task<FavoritePost> AddToFavoriteAsync(AddToFavoriteDto favoritePostsDto)
+        public async Task<FavoritePostDto> AddToFavoriteAsync(AddToFavoriteDto favoritePostsDto)
         {
             var userId = GetUserId();
+
+            var post = await _context.Posts
+                         .Include(p => p.Doctor)
+                         .ThenInclude(d => d.ApplicationUser)
+                         .Include(p => p.PostImages)
+                         .FirstOrDefaultAsync(p => p.Id == favoritePostsDto.PostId);
+            if (post == null)
+                throw new PostNotFoundException("Post not found");
 
             var postExists = await _context.Posts.AnyAsync(p => p.Id == favoritePostsDto.PostId);
 
@@ -33,24 +41,39 @@
             {
                 UserId = userId,
                 PostId = favoritePostsDto.PostId,
-                
-                
+                Post = post
             };
+
             await _context.FavoritePosts.AddAsync(favorite);
             await _context.SaveChangesAsync();
-            return favorite;
+            return new FavoritePostDto
+            {
+                Id = favorite.Id,
+                PostId = post.Id,
+                Title = post.Title,
+                DoctorName = post.Doctor.ApplicationUser.UserName!,
+                Images = post.PostImages.Select(i => i.ImageUrl).ToList()
+            };
         }
 
         public async Task<List<PostDto>> GetFavoritePostsAsync()
         {
             var userId = GetUserId();
+            var request = _httpContextAccessor.HttpContext.Request;
+            var baseUrl = $"{request.Scheme}://{request.Host}";
 
-            var favoritePosts = await _context.FavoritePosts
-                .Where(f => f.UserId == userId)
-                .Include(f => f.Post)
-                .ThenInclude(p => p.PostImages)
-                .Select(f => f.Post)
-                .ToListAsync();
+            var favoritePosts = await _context.FavoritePosts.Where(f => f.UserId == userId)
+                     .Select(f => new PostDto
+                     {
+                         Id = f.Post.Id,
+                         Title = f.Post.Title,
+                         Description = f.Post.Description,
+                         DoctorName = f.Post.Doctor.ApplicationUser.UserName!,
+                         ImageUrls = f.Post.PostImages.Select(i => new PostImageDto
+                         {
+                             ImageUrl = baseUrl + i.ImageUrl
+                         }).ToList()
+                     }).ToListAsync();
             if (!favoritePosts.Any())
                 throw new NotFoundFavoritePostException("No favorite posts found");
 
@@ -58,7 +81,7 @@
             return result;
         }
 
-        public async Task RemoveFromFavoriteAsync(AddToFavoriteDto favoritePostsDto)
+        public async Task<string> RemoveFromFavoriteAsync(AddToFavoriteDto favoritePostsDto)
         {
             var userId = GetUserId();
 
@@ -72,6 +95,8 @@
             _context.FavoritePosts.Remove(favorite);
 
             await _context.SaveChangesAsync();
+
+            return "Post removed from favorites successfully";
         }
 
 
