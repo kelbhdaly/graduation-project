@@ -1,6 +1,4 @@
-﻿using MedicalApp.BusinessLogic.Profiles;
-
-namespace MedicalApp.BusinessLogic.ExtensionMethod
+﻿namespace MedicalApp.BusinessLogic.ExtensionMethod
 {
     public static class BusinessLogicServices
     {
@@ -15,7 +13,8 @@ namespace MedicalApp.BusinessLogic.ExtensionMethod
             services.AddScoped<IFavoritePostService, FavoritePostService>();
             services.AddScoped<IDataSeeding, DataSeeding>();
             services.AddScoped<IMailService, MailService>();
-            services.AddScoped<IAuthenticationService, AuthenticationService>();    
+            services.AddScoped<IAuthenticationService, AuthenticationService>();  
+            services.AddScoped<IUserManagementService, UserManagementService>();
         }
     }
 }

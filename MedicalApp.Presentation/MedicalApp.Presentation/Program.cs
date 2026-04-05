@@ -1,5 +1,3 @@
-using MedicalApp.Presentation.CustomMiddleWares;
-
 var builder = WebApplication.CreateBuilder(args);
 #region Add services to the container.
 builder.Services.AddControllers();
@@ -12,6 +10,7 @@ builder.Services.AddBusinessLogicServices();
 builder.Services.AddUtilities();
 builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JWT"));
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 builder.Services.AddJwtRegistration(builder.Configuration);
 #endregion
 

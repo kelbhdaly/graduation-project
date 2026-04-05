@@ -23,9 +23,9 @@ D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.G
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.AssemblyInfoInputs.cache
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.AssemblyInfo.cs
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.sourcelink.json
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalA.ABB64721.Up2Date
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.dll
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\refint\MedicalApp.BusinessLogic.dll
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.pdb
 D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\ref\MedicalApp.BusinessLogic.dll
-D:\LungCare\MedicalApp.BusinessLogic\obj\Debug\net8.0\MedicalApp.BusinessLogic.sourcelink.json

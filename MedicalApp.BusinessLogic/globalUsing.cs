@@ -20,8 +20,9 @@ global using Microsoft.IdentityModel.Tokens;
 global using System.IdentityModel.Tokens.Jwt;
 global using System.Text;
 global using MedicalApp.DataAccess.HandleExceptions;
-global using MedicalApp.BusinessLogic.DTOs.AuthenticationDto;
-global using System.Security.Authentication;
+global using MedicalApp.BusinessLogic.Profiles;
+global using MedicalApp.BusinessLogic.DTOs.AdminDtos;
+global using MedicalApp.BusinessLogic.DTOs.AiDtos;
 
 
 

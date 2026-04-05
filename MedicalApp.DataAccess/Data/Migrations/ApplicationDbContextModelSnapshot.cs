@@ -22,6 +22,34 @@ namespace MedicalApp.DataAccess.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.AIModels.XrayAnalysis", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Diagnosis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InputImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OutputImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("XrayAnalysisResults");
+                });
+
             modelBuilder.Entity("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -73,6 +101,9 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<int>("UserStatus")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -264,6 +295,35 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.ToTable("PostImages");
                 });
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("ExpiresOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RefreshTokens");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -452,6 +512,17 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.Navigation("Post");
                 });
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.RefreshToken", b =>
+                {
+                    b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "User")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -508,6 +579,8 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.Navigation("Doctor");
 
                     b.Navigation("Patient");
+
+                    b.Navigation("RefreshTokens");
                 });
 
             modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.Doctor", b =>

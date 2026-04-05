@@ -14,5 +14,9 @@ global using System.Text;
 global using MedicalApp.BusinessLogic.DTOs.AuthenticationDto;
 global using Microsoft.AspNetCore.Diagnostics;
 global using MedicalApp.DataAccess.HandleExceptions;
+global using Microsoft.AspNetCore.Authorization;
+global using MedicalApp.Presentation.CustomMiddleWares;
+global using System.IdentityModel.Tokens.Jwt;
+
 
 

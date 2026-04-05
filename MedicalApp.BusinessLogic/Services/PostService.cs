@@ -26,7 +26,7 @@
         public async Task<PostDto> CreatePostAsync(CreatePostDto createPostDto)
         {
             var userId = GetUserId();
-           
+
             var doctor = await _context.Doctors
                                 .Include(d => d.ApplicationUser)
                                  .FirstOrDefaultAsync(d => d.UserId == userId);
@@ -64,7 +64,7 @@
                 Description = post.Description,
                 Title = post.Title,
                 Id = post.Id,
-                DoctorName = doctor.ApplicationUser.UserName! ,
+                DoctorName = doctor.ApplicationUser.UserName!,
                 ImageUrls = post.PostImages.Select(x => new PostImageDto
                 {
                     ImageUrl = x.ImageUrl
@@ -75,16 +75,16 @@
         public async Task<bool> DeletePostAsync(int postId)
         {
             var userId = GetUserId();
-
+            var isAdmin = _httpContextAccessor.HttpContext.User.IsInRole("ADMIN");
             var post = await _context.Posts.Include(p => p.PostImages)
-                               .FirstOrDefaultAsync(p => p.Id == postId);
+                .Include(p => p.Doctor).FirstOrDefaultAsync(p => p.Id == postId);
 
-            if (post?.Doctor.UserId != userId)
+            if (!isAdmin && post!.Doctor.UserId != userId)
                 throw new UnauthorizedException("You can't delete this post");
 
 
             if (post == null)
-                throw new  PostNotFoundException("Post not found");
+                throw new PostNotFoundException("Post not found");
 
             foreach (var image in post.PostImages)
             {

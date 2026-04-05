@@ -104,6 +104,8 @@
 
 
 
+        #region Private Method
+
         private string GetUserId()
         {
             var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -112,7 +114,9 @@
                 throw new UnauthorizedException("User not authenticated");
 
             return userId;
-        }
+        } 
+
+        #endregion
 
 
     }

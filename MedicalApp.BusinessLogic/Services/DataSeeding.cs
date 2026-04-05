@@ -1,4 +1,6 @@
-﻿namespace MedicalApp.BusinessLogic.Services
+﻿using MedicalApp.Infrastructure.RolesInApplication;
+
+namespace MedicalApp.BusinessLogic.Services
 {
     public class DataSeeding : IDataSeeding
     {
@@ -16,40 +18,73 @@
 
         public async Task IdentityDataSeedAsync()
         {
-            try
-            {
-                if (!_roleManager.Roles.Any())
-                {
-                    await _roleManager.CreateAsync(new IdentityRole("Doctor"));
-                    await _roleManager.CreateAsync(new IdentityRole("Patient"));
-                }
+            await SeedRolesAsync();
+            await SeedUsersAsync();
+        }
 
-                if (!_userManager.Users.Any())
-                {
-                    var doctor = new ApplicationUser()
-                    {
-                        Email = "khaled@gmail.com",
-                        PhoneNumber = "1234567890",
-                        UserName = "KhaledMohamed"
-                    };
-                    var patient = new ApplicationUser()
-                    {
-                        Email = "Ali@gmail.com",
-                        PhoneNumber = "1234567890",
-                        UserName = "AliMohamed"
-                    };
-                    await _userManager.CreateAsync(patient, "P@ssw0rd");
-                    await _userManager.CreateAsync(doctor, "P@ssw0rd");
-                    await _userManager.AddToRoleAsync(doctor, "Doctor");
-                    await _userManager.AddToRoleAsync(patient, "Patient");
 
-                    await _dbContext.SaveChangesAsync();
-                }
-            }
-            catch (Exception ex)
+
+
+        private async Task SeedRolesAsync()
+        {
+            if (!await _roleManager.RoleExistsAsync(AppRoles.Admin))
+                await _roleManager.CreateAsync(new IdentityRole(AppRoles.Admin));
+
+            if (!await _roleManager.RoleExistsAsync(AppRoles.Doctor))
+                await _roleManager.CreateAsync(new IdentityRole(AppRoles.Doctor));
+
+            if (!await _roleManager.RoleExistsAsync(AppRoles.Patient))
+                await _roleManager.CreateAsync(new IdentityRole(AppRoles.Patient));
+        }
+
+        private async Task SeedUsersAsync()
+        {
+            if (!_userManager.Users.Any())
             {
-                throw new Exception(ex.Message);
+                await CreateUserAsync(
+                    email: "khaled@gmail.com",
+                    username: "KhaledMohamed",
+                    role: AppRoles.Admin);
+
+                await CreateUserAsync(
+                    email: "Ali@gmail.com",
+                    username: "AliMohamed",
+                    role: AppRoles.Patient);
+
+                await CreateUserAsync(
+                    email: "khaled123@gmail.com",
+                    username: "khaled",
+                    role: AppRoles.Doctor);
             }
         }
+
+        private async Task CreateUserAsync(string email, string username, string role)
+        {
+            var existingUser = await _userManager.FindByEmailAsync(email);
+            if (existingUser != null)
+                return;
+
+            var user = new ApplicationUser
+            {
+                Email = email,
+                UserName = username,
+                PhoneNumber = "1234567890",
+                UserStatus = UserStatus.Active
+            };
+
+            var result = await _userManager.CreateAsync(user, "P@ssw0rd");
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, role);
+            }
+            else
+            {
+                var errors = string.Join(", ", result.Errors.Select(e => e.Description));
+                throw new Exception(errors);
+            }
+        }
+   
+    
     }
 }

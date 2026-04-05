@@ -11,7 +11,7 @@ namespace MedicalApp.Presentation.Controllers
         {
             _postService = postService;
         }
-       // [Authorize(Roles = "Doctor")]
+       [Authorize(Roles = "DOCTOR" )]
         [HttpPost]
         public async Task<IActionResult> CreatePost([FromForm] CreatePostDto createPostDto)
         {
@@ -25,7 +25,7 @@ namespace MedicalApp.Presentation.Controllers
             var posts = await _postService.GetAllPostsAsync();
             return Ok(posts);
         }
-        [Authorize(Roles = "Doctor")]
+        [Authorize(Roles="DOCTOR,ADMIN")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePost(int id)
         {

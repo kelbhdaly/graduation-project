@@ -51,5 +51,19 @@
             return Ok(result);
 
         }
+
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken(RefreshTokenRequestDto refreshTokenRequestDto)
+        {
+            var result = await _authenticationService.RefreshTokenAsync(refreshTokenRequestDto);
+            return Ok(result);
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout(RefreshTokenRequestDto refreshTokenRequestDto )
+        {
+            await _authenticationService.LogoutAsync(refreshTokenRequestDto);
+            return Ok("Logged out successfully");
+        }
     }
 }

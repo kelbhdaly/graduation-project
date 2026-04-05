@@ -1,6 +1,4 @@
-﻿using MedicalApp.BusinessLogic.DTOs.AuthenticationDto;
-
-namespace MedicalApp.BusinessLogic.Services
+﻿namespace MedicalApp.BusinessLogic.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
@@ -59,9 +57,9 @@ namespace MedicalApp.BusinessLogic.Services
         {
             //Check Email 
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
-            if (user == null || !user.EmailConfirmed)
+            if (user == null || user.UserStatus == UserStatus.Pending)
             {
-                throw new UnauthorizedAccessException("Can't Found Email");
+                throw new UnauthorizedAccessException("Can't Login Your Acount Not Active Yet");
             }
 
             //Check Password
@@ -71,12 +69,20 @@ namespace MedicalApp.BusinessLogic.Services
                 throw new UnauthorizedAccessException("Invalid Eamil or Password");
             }
             var roles = await _userManager.GetRolesAsync(user);
+
+            var refreshToken = GenerateRefreshToken();
+            refreshToken.UserId = user.Id;
+
+            user.RefreshTokens.Add(refreshToken);
+            await _dbContext.SaveChangesAsync();
+
             return new UserDto
             {
                 Email = user.Email!,
                 UserName = user.UserName!,
                 Role = roles.FirstOrDefault() ?? "",
-                Token = await GenerateJwtToken(user)
+                Token = await GenerateJwtToken(user),
+                RefreshToken = refreshToken.Token
             };
 
 
@@ -164,6 +170,52 @@ namespace MedicalApp.BusinessLogic.Services
 
             return "Password has been reset successfully";
         }
+
+
+        public async Task<UserDto> RefreshTokenAsync(RefreshTokenRequestDto refreshTokenRequestDto)
+        {
+            var refreshToken = await _dbContext.RefreshTokens
+               .Include(x => x.User)
+                  .FirstOrDefaultAsync(x => x.Token == refreshTokenRequestDto.Token);
+
+            if (refreshToken == null || refreshToken.IsRevoked 
+                || refreshToken.ExpiresOn <= DateTime.UtcNow)
+                throw new UnauthorizedAccessException("Invalid refresh token");
+
+            var user = refreshToken.User;
+            refreshToken.IsRevoked = true;
+            var newRefreshToken = GenerateRefreshToken();
+            newRefreshToken.UserId = user.Id;
+
+            user.RefreshTokens.Add(newRefreshToken);
+
+            await _dbContext.SaveChangesAsync();
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            return new UserDto
+            {
+                Email = user.Email!,
+                UserName = user.UserName!,
+                Role = roles.FirstOrDefault() ?? "",
+                Token = await GenerateJwtToken(user),
+                RefreshToken = newRefreshToken.Token
+            };
+        }
+
+        public async Task LogoutAsync(RefreshTokenRequestDto refreshTokenRequestDto)
+        {
+            var refreshToken = await _dbContext.RefreshTokens
+                     .FirstOrDefaultAsync(x => x.Token == refreshTokenRequestDto.Token);
+
+            if (refreshToken == null)
+                throw new UnauthorizedAccessException("Invalid token");
+
+            refreshToken.IsRevoked = true;
+
+            await _dbContext.SaveChangesAsync();
+        }
+
         #region Extract Method
         private async Task<ApplicationUser> CreateUserAsync(CreateUserDto createUserDto)
         {
@@ -177,6 +229,7 @@ namespace MedicalApp.BusinessLogic.Services
                 UserName = createUserDto.Email,
                 Email = createUserDto.Email,
                 PhoneNumber = createUserDto.PhoneNumber,
+                UserStatus = UserStatus.Pending
             };
 
             var result = await _userManager.CreateAsync(user, createUserDto.Password);
@@ -227,6 +280,18 @@ namespace MedicalApp.BusinessLogic.Services
                 );
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        private RefreshToken GenerateRefreshToken()
+        {
+            return new RefreshToken
+            {
+                Token = Convert.ToBase64String(Guid.NewGuid().ToByteArray()),
+                ExpiresOn = DateTime.UtcNow.AddDays(7),
+                IsRevoked = false
+            };
+        }
+
+       
+       
 
         #endregion
     }

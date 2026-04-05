@@ -63,5 +63,22 @@
             return imageUrls;
         }
 
+        public async Task<string> SaveBase64ImageAsync(string base64, string folderName)
+        {
+            var folderPath = Path.Combine(_environment.WebRootPath, "images", folderName);
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            var fileName = Guid.NewGuid() + ".png";
+
+            var path = Path.Combine(folderPath, fileName);
+
+            var bytes = Convert.FromBase64String(base64);
+
+            await File.WriteAllBytesAsync(path, bytes);
+
+            return $"/images/{folderName}/{fileName}";
+        }
     }
 }

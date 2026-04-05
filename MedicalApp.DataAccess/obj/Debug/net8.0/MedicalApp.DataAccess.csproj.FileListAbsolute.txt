@@ -21,9 +21,9 @@ D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.Generat
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.AssemblyInfoInputs.cache
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.AssemblyInfo.cs
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.csproj.CoreCompileInputs.cache
+D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.sourcelink.json
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.dll
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\refint\MedicalApp.DataAccess.dll
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.pdb
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.genruntimeconfig.cache
 D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\ref\MedicalApp.DataAccess.dll
-D:\LungCare\MedicalApp.DataAccess\obj\Debug\net8.0\MedicalApp.DataAccess.sourcelink.json
