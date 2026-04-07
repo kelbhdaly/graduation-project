@@ -1,0 +1,15 @@
+D:\LungCare\MedicalApp.DataAccess\bin\Release\net8.0\MedicalApp.DataAccess.deps.json
+D:\LungCare\MedicalApp.DataAccess\bin\Release\net8.0\MedicalApp.DataAccess.runtimeconfig.json
+D:\LungCare\MedicalApp.DataAccess\bin\Release\net8.0\MedicalApp.DataAccess.dll
+D:\LungCare\MedicalApp.DataAccess\bin\Release\net8.0\MedicalApp.DataAccess.pdb
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.csproj.AssemblyReference.cache
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.AssemblyInfoInputs.cache
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.AssemblyInfo.cs
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.csproj.CoreCompileInputs.cache
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.sourcelink.json
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.dll
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\refint\MedicalApp.DataAccess.dll
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.pdb
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\MedicalApp.DataAccess.genruntimeconfig.cache
+D:\LungCare\MedicalApp.DataAccess\obj\Release\net8.0\ref\MedicalApp.DataAccess.dll

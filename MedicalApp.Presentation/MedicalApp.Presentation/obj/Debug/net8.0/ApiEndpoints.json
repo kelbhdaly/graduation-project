@@ -1,34 +1,8 @@
 [
   {
     "ContainingType": "MedicalApp.Presentation.Controllers.AdminController",
-    "Method": "GetAllUserPanding",
-    "RelativePath": "api/Admin",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MedicalApp.Presentation.Controllers.AdminController",
-    "Method": "RejectUser",
-    "RelativePath": "api/Admin",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MedicalApp.Presentation.Controllers.AdminController",
     "Method": "ApproveUser",
-    "RelativePath": "api/Admin/{userId}",
+    "RelativePath": "api/Admin/approve/{userId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -42,16 +16,26 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MedicalApp.Presentation.Controllers.AuthenticationesController",
-    "Method": "ConfirmEmail",
-    "RelativePath": "api/Authenticationes/ConfirmEmail",
+    "ContainingType": "MedicalApp.Presentation.Controllers.AdminController",
+    "Method": "GetAllUserPanding",
+    "RelativePath": "api/Admin/pending-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.AdminController",
+    "Method": "RejectUser",
+    "RelativePath": "api/Admin/reject/{userId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "confirmEmailDTO",
-        "Type": "MedicalApp.BusinessLogic.DTOs.AuthenticationDto.ConfirmEmailDTO",
+        "Name": "userId",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -123,6 +107,16 @@
   },
   {
     "ContainingType": "MedicalApp.Presentation.Controllers.AuthenticationesController",
+    "Method": "GetMe",
+    "RelativePath": "api/Authenticationes/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.AuthenticationesController",
     "Method": "PatientRegister",
     "RelativePath": "api/Authenticationes/PatientRegister",
     "HttpMethod": "POST",
@@ -164,6 +158,38 @@
       {
         "Name": "resetPasswordDto",
         "Type": "MedicalApp.BusinessLogic.DTOs.AuthenticationDto.ResetPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.AuthenticationesController",
+    "Method": "SendOtp",
+    "RelativePath": "api/Authenticationes/send-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sendOtpDto",
+        "Type": "MedicalApp.BusinessLogic.DTOs.AuthenticationDto.SendOtpDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.AuthenticationesController",
+    "Method": "VerifyOtp",
+    "RelativePath": "api/Authenticationes/verify-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "verifyOtpDto",
+        "Type": "MedicalApp.BusinessLogic.DTOs.AuthenticationDto.VerifyOtpDto",
         "IsRequired": true
       }
     ],

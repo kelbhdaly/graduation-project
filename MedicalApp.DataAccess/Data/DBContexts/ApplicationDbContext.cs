@@ -17,6 +17,7 @@
         public DbSet<Patient> Patients { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<XrayAnalysis> XrayAnalysisResults { get; set; }
+        public DbSet<OtpCode> OtpCodes { get; set; }
         #endregion
 
     }

@@ -13,46 +13,45 @@
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public async Task<FavoritePostDto> AddToFavoriteAsync(AddToFavoriteDto favoritePostsDto)
+        public async Task<FavoritePostDto> AddToFavoriteAsync(AddToFavoriteDto addToFavoriteDto)
         {
             var userId = GetUserId();
 
-            var post = await _context.Posts
-                         .Include(p => p.Doctor)
-                         .ThenInclude(d => d.ApplicationUser)
-                         .Include(p => p.PostImages)
-                         .FirstOrDefaultAsync(p => p.Id == favoritePostsDto.PostId);
-            if (post == null)
-                throw new PostNotFoundException("Post not found");
-
-            var postExists = await _context.Posts.AnyAsync(p => p.Id == favoritePostsDto.PostId);
-
-            if (!postExists)
-                throw new PostNotFoundException("Post not found");
-
-            var exists = await _context.FavoritePosts.
-                 AnyAsync(F => F.UserId == userId && F.PostId == favoritePostsDto.PostId);
+            var exists = await _context.FavoritePosts
+                .AnyAsync(f => f.UserId == userId && f.PostId == addToFavoriteDto.PostId);
 
             if (exists)
-                throw new PostAlreadyInFavoritesException("Post is already in favorites.");
+                throw new PostAlreadyInFavoritesException("Already added");
 
+            var post = await _context.Posts
+                .Where(p => p.Id == addToFavoriteDto.PostId)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Title,
+                    DoctorName = p.Doctor.ApplicationUser.UserName,
+                    Images = p.PostImages.Select(i => i.ImageUrl).ToList()
+                }).FirstOrDefaultAsync();
+
+            if (post == null)
+                throw new PostNotFoundException("Post not found");
 
             var favorite = new FavoritePost
             {
                 UserId = userId,
-                PostId = favoritePostsDto.PostId,
-                Post = post
+                PostId = addToFavoriteDto.PostId
             };
 
             await _context.FavoritePosts.AddAsync(favorite);
             await _context.SaveChangesAsync();
+
             return new FavoritePostDto
             {
                 Id = favorite.Id,
                 PostId = post.Id,
                 Title = post.Title,
-                DoctorName = post.Doctor.ApplicationUser.UserName!,
-                Images = post.PostImages.Select(i => i.ImageUrl).ToList()
+                DoctorName = post.DoctorName!,
+                Images = post.Images
             };
         }
 
@@ -114,7 +113,7 @@
                 throw new UnauthorizedException("User not authenticated");
 
             return userId;
-        } 
+        }
 
         #endregion
 

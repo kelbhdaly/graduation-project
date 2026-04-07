@@ -10,7 +10,7 @@
     "version": "v1"
   },
   "paths": {
-    "/api/Admin": {
+    "/api/Admin/pending-users": {
       "get": {
         "tags": [
           "Admin"
@@ -20,7 +20,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Admin/approve/{userId}": {
       "post": {
         "tags": [
           "Admin"
@@ -28,7 +30,8 @@
         "parameters": [
           {
             "name": "userId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -41,7 +44,7 @@
         }
       }
     },
-    "/api/Admin/{userId}": {
+    "/api/Admin/reject/{userId}": {
       "post": {
         "tags": [
           "Admin"
@@ -156,7 +159,19 @@
         }
       }
     },
-    "/api/Authenticationes/ConfirmEmail": {
+    "/api/Authenticationes/me": {
+      "get": {
+        "tags": [
+          "Authenticationes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticationes/send-otp": {
       "post": {
         "tags": [
           "Authenticationes"
@@ -165,17 +180,48 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfirmEmailDTO"
+                "$ref": "#/components/schemas/SendOtpDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfirmEmailDTO"
+                "$ref": "#/components/schemas/SendOtpDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfirmEmailDTO"
+                "$ref": "#/components/schemas/SendOtpDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticationes/verify-otp": {
+      "post": {
+        "tags": [
+          "Authenticationes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpDto"
               }
             }
           }
@@ -530,21 +576,6 @@
         },
         "additionalProperties": false
       },
-      "ConfirmEmailDTO": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "format": "email",
-            "nullable": true
-          },
-          "token": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "DoctorRegisterDto": {
         "required": [
           "confirmPassword",
@@ -751,11 +782,35 @@
             "format": "email",
             "nullable": true
           },
-          "token": {
+          "code": {
             "type": "string",
             "nullable": true
           },
           "newPassword": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendOtpDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VerifyOtpDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
             "type": "string",
             "nullable": true
           }

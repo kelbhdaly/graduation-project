@@ -13,20 +13,20 @@
         }
 
 
-        [HttpGet]
+        [HttpGet("pending-users")]
         public async Task<IActionResult> GetAllUserPanding()
         {
             var users = await _userManagementService.GetAllUserPandingAsync();
             return Ok(users);
         }
 
-        [HttpPost("{userId}")]
+        [HttpPost("approve/{userId}")]
         public async Task<IActionResult> ApproveUser(string userId)
         {
             var result = await _userManagementService.ApproveUserAsync(userId);
             return Ok(result);
         }
-        [HttpPost]
+        [HttpPost("reject/{userId}")]
         public async Task<IActionResult> RejectUser(string userId)
         {
             var result = await _userManagementService.RejectUserAsync(userId);

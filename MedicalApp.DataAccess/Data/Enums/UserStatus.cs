@@ -4,6 +4,7 @@
     {
         Pending = 1,
         Active,
-        Rejected
+        Rejected,
+        Disabled
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace MedicalApp.BusinessLogic.Services
+﻿using Microsoft.AspNetCore.Http;
+
+namespace MedicalApp.BusinessLogic.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
@@ -7,16 +9,18 @@
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
         private readonly IMailService _mailService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public AuthenticationService(ApplicationDbContext dbContext,
             UserManager<ApplicationUser> userManager,
-            IConfiguration configuration, IMapper mapper, IMailService mailService)
+            IConfiguration configuration, IMapper mapper, IMailService mailService, IHttpContextAccessor httpContextAccessor)
         {
             _dbContext = dbContext;
             _userManager = userManager;
             _configuration = configuration;
             _mapper = mapper;
             _mailService = mailService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<string> DoctorRegisterAsync(DoctorRegisterDto doctorRegisterDto)
@@ -32,7 +36,10 @@
             _dbContext.Doctors.Add(doctor);
             await _dbContext.SaveChangesAsync();
 
-            await SendConfirmationEmailAsync(user);
+            await SendOtpAsync(new SendOtpDto
+            {
+                Email = user.Email!
+            });
             return "Doctor Registered Successfully. Check your email.";
         }
 
@@ -49,7 +56,10 @@
             _dbContext.Patients.Add(patient);
             await _dbContext.SaveChangesAsync();
 
-            await SendConfirmationEmailAsync(user);
+            await SendOtpAsync(new SendOtpDto
+            {
+                Email = user.Email!
+            });
             return "Patient  Registered Successfully. Check your email. ";
         }
 
@@ -57,11 +67,14 @@
         {
             //Check Email 
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
-            if (user == null || user.UserStatus == UserStatus.Pending)
-            {
-                throw new UnauthorizedAccessException("Can't Login Your Acount Not Active Yet");
-            }
+            if (user == null)
+                throw new UnauthorizedAccessException("Invalid email or password");
 
+            if (!user.EmailConfirmed)
+                throw new UnauthorizedAccessException("Please verify your email first");
+
+            if (user.UserStatus != UserStatus.Active)
+                throw new UnauthorizedAccessException("Your account is not approved yet");
             //Check Password
             var passwordIsValid = await _userManager.CheckPasswordAsync(user, loginDto.Password);
             if (!passwordIsValid)
@@ -88,31 +101,80 @@
 
         }
 
-        public async Task<string> ConfirmEmailAsync(ConfirmEmailDTO confirmEmailDto)
+        public async Task<MeDto> GetMeAsync()
         {
-            var user = await _userManager.FindByEmailAsync(confirmEmailDto.Email);
+            var userId = GetUserId();
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+                throw new UnauthorizedAccessException("User not found");
+            if (user.UserStatus != UserStatus.Active)
+                throw new UnauthorizedAccessException("User not active");
+            var roles = await _userManager.GetRolesAsync(user);
+            return new MeDto
+            {
+                Id = user.Id,
+                Name = user.UserName!,
+                Email = user.Email!,
+                Role = roles.FirstOrDefault() ?? ""
+            };
+        }
+
+        public async Task<string> SendOtpAsync(SendOtpDto sendOtpDto)
+        {
+            var user = await _userManager.FindByEmailAsync(sendOtpDto.Email);
 
             if (user == null)
+                throw new Exception("User not found");
+
+            _dbContext.OtpCodes.RemoveRange(
+                _dbContext.OtpCodes.
+                Where(x => x.Email == sendOtpDto.Email && !x.IsUsed || x.ExpireAt < DateTime.UtcNow));
+            var code = GenerateOtp();
+
+            var otp = new OtpCode
             {
-                throw new InvalidEmailException("Invalid email or token");
-            }
+                Email = user.Email!,
+                Code = code,
+                ExpireAt = DateTime.UtcNow.AddMinutes(5)
+            };
 
-            if (user.EmailConfirmed)
+            _dbContext.OtpCodes.Add(otp);
+            await _dbContext.SaveChangesAsync();
+
+            await _mailService.SendEmailAsync(new EmailMessage
             {
-                throw new InvalidEmailException("Email already confirmed");
-            }
+                To = user.Email!,
+                Subject = "Your OTP Code",
+                Body = $"Your OTP is: {code}"
+            });
 
-            var decodedToken = Uri.UnescapeDataString(confirmEmailDto.Token);
-
-            var result = await _userManager.ConfirmEmailAsync(user, decodedToken);
-
-            if (!result.Succeeded)
-            {
-                throw new InvalidEmailException("Invalid confirmation token");
-            }
-
-            return "Email Confirmed Successfully";
+            return "OTP sent";
         }
+        public async Task<string> VerifyOtpAsync(VerifyOtpDto verifyOtpDto)
+        {
+            var otp = await _dbContext.OtpCodes
+                .FirstOrDefaultAsync(x =>
+                    x.Email == verifyOtpDto.Email &&
+                    x.Code == verifyOtpDto.Code &&
+                    !x.IsUsed);
+
+            if (otp == null || otp.ExpireAt < DateTime.UtcNow)
+                throw new Exception("Invalid or expired OTP");
+
+            otp.IsUsed = true;
+
+            var user = await _userManager.FindByEmailAsync(verifyOtpDto.Email);
+
+            if (user != null)
+            {
+                user.EmailConfirmed = true;
+            }
+
+            await _dbContext.SaveChangesAsync();
+
+            return "OTP verified successfully";
+        }
+
 
         public async Task<string> ForgetPasswordAsync(ForgetPasswordDto forgetPasswordDto)
         {
@@ -123,50 +185,38 @@
                 return "If the email exists, a reset link has been sent.";
             }
 
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            await SendOtpAsync(
+                  new SendOtpDto
+                  {
+                      Email = user.Email!
+                  });
 
-            var resetLink =
-                $"{_configuration["FrontEnd:URL"]}/reset-password?email={user.Email}&token={Uri.EscapeDataString(token)}";
 
-            var emailMessage = new EmailMessage
-            {
-                To = user.Email!,
-                Subject = "Password Reset",
-                Body = $@"
-            <h2>Password Reset</h2>
-            <p>Click the link below to reset your password:</p>
-            <a href='{resetLink}'>Reset Password</a>"
-            };
 
-            await _mailService.SendEmailAsync(emailMessage);
-
-            return " Link has been sent.";
+            return "Reset code sent to your email.";
         }
 
         public async Task<string> ResetPasswordAsync(ResetPasswordDto resetPasswordDto)
         {
-            if (string.IsNullOrWhiteSpace(resetPasswordDto.Email) ||
-                string.IsNullOrWhiteSpace(resetPasswordDto.Token) ||
-                string.IsNullOrWhiteSpace(resetPasswordDto.NewPassword))
-            {
-                throw new BadRequestException("Invalid data");
-            }
+            var otp = await _dbContext.OtpCodes.FirstOrDefaultAsync
+        (x => x.Email == resetPasswordDto.Email && x.Code == resetPasswordDto.Code && !x.IsUsed);
 
+            if (otp == null || otp.ExpireAt < DateTime.UtcNow)
+                throw new Exception("Invalid or expired OTP");
             var user = await _userManager.FindByEmailAsync(resetPasswordDto.Email);
+            if (user == null)
+                throw new NotFoundUserException("User not found");
+            otp.IsUsed = true;
+           
+            var removePassword = await _userManager.RemovePasswordAsync(user);
+            if (!removePassword.Succeeded)
+                throw new Exception("Failed to reset password");
 
-            if (user == null || !user.EmailConfirmed)
-            {
-                return "Invalid email or token";
-            }
+            var addNewPassword = await _userManager.AddPasswordAsync(user, resetPasswordDto.NewPassword);
+            if (!addNewPassword.Succeeded)
+                throw new InvalidResetPasswordException("Failed to set new password");
 
-            var token = Uri.UnescapeDataString(resetPasswordDto.Token);
-
-            var resetResult = await _userManager.ResetPasswordAsync(user, token, resetPasswordDto.NewPassword);
-
-            if (!resetResult.Succeeded)
-            {
-                return "Invalid email or token";
-            }
+            await _dbContext.SaveChangesAsync();
 
             return "Password has been reset successfully";
         }
@@ -178,7 +228,7 @@
                .Include(x => x.User)
                   .FirstOrDefaultAsync(x => x.Token == refreshTokenRequestDto.Token);
 
-            if (refreshToken == null || refreshToken.IsRevoked 
+            if (refreshToken == null || refreshToken.IsRevoked
                 || refreshToken.ExpiresOn <= DateTime.UtcNow)
                 throw new UnauthorizedAccessException("Invalid refresh token");
 
@@ -239,18 +289,7 @@
             return user;
         }
 
-        private async Task SendConfirmationEmailAsync(ApplicationUser user)
-        {
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var confirmationLink = $"https://localhost:5001/api/auth/confirm-email?userId={user.Id}&token={Uri.EscapeDataString(token)}";
-            await _mailService.SendEmailAsync(new EmailMessage
-            {
 
-                To = user.Email!,
-                Subject = "Confirm your email",
-                Body = confirmationLink
-            });
-        }
 
         private async Task<string> GenerateJwtToken(ApplicationUser user)
         {
@@ -280,6 +319,7 @@
                 );
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
         private RefreshToken GenerateRefreshToken()
         {
             return new RefreshToken
@@ -290,9 +330,23 @@
             };
         }
 
-       
-       
+        private string GetUserId()
+        {
+            var userId = _httpContextAccessor.HttpContext?.User
+                       .FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
+            if (string.IsNullOrEmpty(userId))
+                throw new UnauthorizedException("User not authenticated");
+
+            return userId;
+        }
+
+
+        private string GenerateOtp()
+        {
+            var random = new Random();
+            return random.Next(100000, 999999).ToString(); // 6 digits
+        }
         #endregion
     }
 

@@ -22,7 +22,9 @@
             {
                 UserId = u.Id,
                 Email = u.Email!,
-                UserName = u.UserName!
+                UserName = u.UserName!,
+                Status = u.UserStatus.ToString()
+
 
             }).ToList();
 
@@ -30,19 +32,29 @@
 
         public async Task<string> ApproveUserAsync(string userId)
         {
-            var user = _userManager.Users.FirstOrDefault(u => u.Id == userId);
+            var user = await _userManager.Users
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
             if (user == null)
                 throw new NotFoundUserException("User not found");
 
+            if (user.UserStatus != UserStatus.Pending)
+                throw new BadRequestException("User is not pending");
+
             user.UserStatus = UserStatus.Active;
-            await _userManager.UpdateAsync(user);
-            EmailMessage emailMessage = new EmailMessage
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+                throw new Exception("Failed to update user");
+
+            await _mailService.SendEmailAsync(new EmailMessage
             {
                 To = user.Email!,
                 Subject = "Account Approved",
                 Body = "Your account has been approved. You can now log in."
-            };
-            await _mailService.SendEmailAsync(emailMessage);
+            });
+
             return "User approved successfully";
         }
 

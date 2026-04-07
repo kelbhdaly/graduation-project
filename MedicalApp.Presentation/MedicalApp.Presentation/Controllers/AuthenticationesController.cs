@@ -30,13 +30,29 @@
             return Ok(result);
         }
 
-
-        [HttpPost("ConfirmEmail")]
-        public async Task<IActionResult> ConfirmEmail([FromBody]ConfirmEmailDTO confirmEmailDTO)
+        [HttpGet("me")]
+        [Authorize]
+        public async Task<IActionResult> GetMe()
         {
-            var result = await _authenticationService.ConfirmEmailAsync(confirmEmailDTO);
+            var result = await _authenticationService.GetMeAsync();
             return Ok(result);
         }
+
+        [HttpPost("send-otp")]
+        public async Task<IActionResult> SendOtp(SendOtpDto sendOtpDto)
+        {
+            var result = await _authenticationService.SendOtpAsync(sendOtpDto);
+            return Ok(result);
+        }
+
+        [HttpPost("verify-otp")]
+        public async Task<IActionResult> VerifyOtp(VerifyOtpDto verifyOtpDto)
+        {
+            var result = await _authenticationService.VerifyOtpAsync(verifyOtpDto);
+            return Ok(result);
+        }
+
+     
 
         [HttpPost("ForgetPassword")]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordDto forgetPasswordDto)

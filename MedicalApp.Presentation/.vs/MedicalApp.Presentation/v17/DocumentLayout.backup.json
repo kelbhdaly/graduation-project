@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "D:\\LungCare\\MedicalApp.Presentation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\iservices\\iaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\aidtos\\airesultdto.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\aimodels\\xrayanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\dbcontexts\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\iservices\\iimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30042160-13C9-440A-8492-6AD2D76AA9B6}|..\\MedicalApp.Infrastructure\\MedicalApp.Infrastructure.csproj|d:\\lungcare\\medicalapp.infrastructure\\utlites\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\migrations\\20260405105203_createtablexrayanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,104 +14,20 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AiResultDto.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\AiDtos\\AiResultDto.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\AiDtos\\AiResultDto.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\AiDtos\\AiResultDto.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\AiDtos\\AiResultDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T11:02:30.485Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IAiClient.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IAiClient.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\IServices\\IAiClient.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IAiClient.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\IServices\\IAiClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T10:57:50.616Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "MedicalApp.Presentation\\appsettings.json",
+              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\appsettings.json*",
+              "RelativeToolTip": "MedicalApp.Presentation\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-07T20:16:30.194Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20260405105203_CreateTableXrayAnalysis.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260405105203_CreateTableXrayAnalysis.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260405105203_CreateTableXrayAnalysis.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260405105203_CreateTableXrayAnalysis.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260405105203_CreateTableXrayAnalysis.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T10:52:03.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GlobalUsing.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\GlobalUsing.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\GlobalUsing.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\GlobalUsing.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\GlobalUsing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T10:50:21.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationDbContext.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T10:50:02.474Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "XrayAnalysis.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\AIModels\\XrayAnalysis.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\AIModels\\XrayAnalysis.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\AIModels\\XrayAnalysis.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\AIModels\\XrayAnalysis.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T10:47:28.062Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IImageService.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IImageService.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\IServices\\IImageService.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IImageService.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\IServices\\IImageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T10:11:19.108Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ImageService.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Infrastructure\\Utlites\\ImageService.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.Infrastructure\\Utlites\\ImageService.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.Infrastructure\\Utlites\\ImageService.cs",
-              "RelativeToolTip": "..\\MedicalApp.Infrastructure\\Utlites\\ImageService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAEEAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T10:08:26.527Z"
             }
           ]
         },

@@ -39,7 +39,7 @@ namespace MedicalApp.BusinessLogic.Services
 
         private async Task SeedUsersAsync()
         {
-            if (!_userManager.Users.Any())
+            
             {
                 await CreateUserAsync(
                     email: "khaled@gmail.com",
@@ -71,6 +71,7 @@ namespace MedicalApp.BusinessLogic.Services
                 PhoneNumber = "1234567890",
                 UserStatus = UserStatus.Active
             };
+            user.EmailConfirmed = true;
 
             var result = await _userManager.CreateAsync(user, "P@ssw0rd");
 

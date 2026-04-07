@@ -159,7 +159,6 @@ D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\sta
 D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\staticwebassets.development.json
 D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\MedicalA.8AAD5723.Up2Date
 D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\MedicalApp.Presentation.dll
 D:\LungCare\MedicalApp.Presentation\MedicalApp.Presentation\obj\Debug\net8.0\refint\MedicalApp.Presentation.dll
