@@ -102,6 +102,24 @@
                     Title = "User Not Found",
                     Detail = exception.Message,
                 },  
+                DisableUserException => new ProblemDetails
+                {
+                    Status = StatusCodes.Status403Forbidden,
+                    Title = "User Disabled",
+                    Detail = exception.Message,
+                },
+                EnableUserException => new ProblemDetails
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Title = "User Enable Operation Failed",
+                    Detail = exception.Message,
+                },
+                ToggleDeleteUserException => new ProblemDetails
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Title = "Toggle Delete User Operation Failed",
+                    Detail = exception.Message,
+                },
             };
 
         }

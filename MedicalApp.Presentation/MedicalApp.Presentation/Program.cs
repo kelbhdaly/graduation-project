@@ -12,6 +12,22 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JWT"));
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 builder.Services.AddJwtRegistration(builder.Configuration);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+});
+
+
+builder.Services.AddAiServices(builder.Configuration);
+
+
 #endregion
 
 var app = builder.Build();
@@ -20,18 +36,18 @@ var app = builder.Build();
 await app.AddSeedDataBaseAsync();
 
 #region Configure the HTTP request pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//}
+//{
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseExceptionHandler();
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseCors("AllowAll");
 app.MapControllers();
 
-app.Run(); 
+app.Run();
 #endregion

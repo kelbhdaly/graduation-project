@@ -6,5 +6,7 @@
         public Patient? Patient { get; set; }
         public List<RefreshToken> RefreshTokens { get; set; } = new();
         public UserStatus UserStatus { get; set; } = UserStatus.Pending;
+        public bool IsDeleted { get; set; } = false;
+        public DateTime CreatedAt { get; set; }
     }
 }

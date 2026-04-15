@@ -22,34 +22,6 @@ namespace MedicalApp.DataAccess.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MedicalApp.DataAccess.Data.AIModels.XrayAnalysis", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Diagnosis")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InputImagePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OutputImagePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("XrayAnalysisResults");
-                });
-
             modelBuilder.Entity("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -62,11 +34,17 @@ namespace MedicalApp.DataAccess.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<bool>("LockoutEnabled")
@@ -191,6 +169,74 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.HasIndex("PostId");
 
                     b.ToTable("FavoritePosts");
+                });
+
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.LungRiskAnalysis", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AirPollution")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AlcoholUse")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BalancedDiet")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ChestPain")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CoughingOfBlood")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DustAllergy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GeneticRisk")
+                        .HasColumnType("int");
+
+                    b.Property<double>("High")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Index")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Low")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Medium")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Obesity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OccupationalHazards")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PassiveSmoker")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Result")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("LungRiskAnalyses");
                 });
 
             modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.OtpCode", b =>
@@ -351,6 +397,48 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.XrayAnalysis", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Confidence")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("LungOpacity")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Normal")
+                        .HasColumnType("float");
+
+                    b.Property<string>("PredictedClass")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("ViralPneumonia")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("XrayAnalysisResults");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -506,6 +594,17 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.Navigation("Post");
                 });
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.LungRiskAnalysis", b =>
+                {
+                    b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.Patient", b =>
                 {
                     b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "ApplicationUser")
@@ -543,6 +642,17 @@ namespace MedicalApp.DataAccess.Data.Migrations
                 {
                     b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "User")
                         .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.XrayAnalysis", b =>
+                {
+                    b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "User")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

@@ -7,6 +7,5 @@ global using MedicalApp.DataAccess.Data.DBContexts;
 global using System.ComponentModel.DataAnnotations.Schema;
 global using System.ComponentModel.DataAnnotations;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
-global using MedicalApp.DataAccess.Data.AIModels;
 
 

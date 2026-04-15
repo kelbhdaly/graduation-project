@@ -9,6 +9,8 @@
             var ObjectOfDataSeeding = Scope.ServiceProvider.GetRequiredService<IDataSeeding>();
             await ObjectOfDataSeeding.IdentityDataSeedAsync();
 
+
+
         }
     }
 }

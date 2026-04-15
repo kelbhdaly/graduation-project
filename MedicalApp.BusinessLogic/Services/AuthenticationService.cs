@@ -70,11 +70,17 @@ namespace MedicalApp.BusinessLogic.Services
             if (user == null)
                 throw new UnauthorizedAccessException("Invalid email or password");
 
+            if (user.IsDeleted)
+                throw new UnauthorizedAccessException("This account has been deleted");
+
             if (!user.EmailConfirmed)
                 throw new UnauthorizedAccessException("Please verify your email first");
 
             if (user.UserStatus != UserStatus.Active)
                 throw new UnauthorizedAccessException("Your account is not approved yet");
+
+            if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTimeOffset.UtcNow)
+                throw new UnauthorizedAccessException("Your account is disabled");
             //Check Password
             var passwordIsValid = await _userManager.CheckPasswordAsync(user, loginDto.Password);
             if (!passwordIsValid)
