@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedicalApp.BusinessLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a2daa9ff564dd219d7c5ec134171dddf2f531e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7d4caff8e6bb63a3b814839761f72ad1522379f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedicalApp.BusinessLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedicalApp.BusinessLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

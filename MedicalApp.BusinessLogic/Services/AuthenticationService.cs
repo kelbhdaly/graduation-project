@@ -76,11 +76,22 @@ namespace MedicalApp.BusinessLogic.Services
             if (!user.EmailConfirmed)
                 throw new UnauthorizedAccessException("Please verify your email first");
 
+            if (user.UserStatus == UserStatus.Rejected)
+                throw new UnauthorizedAccessException("Your Account Is Rejected");
+
+         
+            if (user.UserStatus == UserStatus.Disabled)
+                throw new UnauthorizedAccessException("Your account is disabled");
+
+            if (user.IsDeleted == true)
+                throw new UnauthorizedAccessException("Your account is Deleted");
+
+
+
             if (user.UserStatus != UserStatus.Active)
                 throw new UnauthorizedAccessException("Your account is not approved yet");
 
-            if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTimeOffset.UtcNow)
-                throw new UnauthorizedAccessException("Your account is disabled");
+
             //Check Password
             var passwordIsValid = await _userManager.CheckPasswordAsync(user, loginDto.Password);
             if (!passwordIsValid)

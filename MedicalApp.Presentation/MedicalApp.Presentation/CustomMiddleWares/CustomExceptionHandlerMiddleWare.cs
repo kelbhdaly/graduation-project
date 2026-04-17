@@ -120,6 +120,12 @@
                     Title = "Toggle Delete User Operation Failed",
                     Detail = exception.Message,
                 },
+                FailedUpdateUserException => new ProblemDetails
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Title = "Failed Update User Operation",
+                    Detail = exception.Message,
+                },
             };
 
         }

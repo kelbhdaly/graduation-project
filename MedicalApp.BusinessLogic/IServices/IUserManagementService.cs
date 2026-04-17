@@ -3,9 +3,9 @@
     public interface IUserManagementService
     {
         Task<List<GetUsersDTo>> GetAllUsersAsync();
-        Task<List<UsersPandingDto>> GetAllUserPandingAsync();
-        Task<List<UsersPandingDto>> GetAllDoctorPanding();
-        Task<List<UsersPandingDto>> GetAllPatientPanding();
+        Task<List<UsersPendingDto>> GetAllUserPendingAsync();
+        Task<List<UsersPendingDto>> GetAllDoctorPending();
+        Task<List<UsersPendingDto>> GetAllPatientPending();
         Task<string> ApproveUserAsync(string userId);
         Task<string> RejectUserAsync(string userId);
         Task<string> DisableUserAsync(string userId);        

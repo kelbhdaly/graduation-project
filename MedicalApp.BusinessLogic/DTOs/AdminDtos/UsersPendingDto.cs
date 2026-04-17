@@ -1,6 +1,6 @@
 ﻿namespace MedicalApp.BusinessLogic.DTOs.AdminDtos
 {
-    public class UsersPandingDto
+    public class UsersPendingDto
     {
         public string UserId { get; set; } = default!;
         public string Email { get; set; } = default!;

@@ -42,7 +42,7 @@ namespace MedicalApp.BusinessLogic.Services
         }
 
 
-        public async Task<List<UsersPandingDto>> GetAllUserPandingAsync()
+        public async Task<List<UsersPendingDto>> GetAllUserPendingAsync()
         {
             var users = await _userManager.Users.
                  Where(u => u.UserStatus == UserStatus.Pending).ToListAsync();
@@ -50,36 +50,36 @@ namespace MedicalApp.BusinessLogic.Services
 
             if (users == null || !users.Any())
             {
-                return new List<UsersPandingDto>();
+                return new List<UsersPendingDto>();
             }
 
-            List<UsersPandingDto> result = await UserPanding(users);
+            List<UsersPendingDto> result = await UserPanding(users);
             return result.ToList();
         }
 
  
-        public async Task<List<UsersPandingDto>> GetAllDoctorPanding()
+        public async Task<List<UsersPendingDto>> GetAllDoctorPending()
         {
             var users = await _userManager.Users.
                 Where(u => u.UserStatus == UserStatus.Pending && u.Doctor != null).ToListAsync();
 
             if (users == null || !users.Any())
             {
-                return new List<UsersPandingDto>();
+                return new List<UsersPendingDto>();
             }
 
-            List<UsersPandingDto> result = await UserPanding(users);
+            List<UsersPendingDto> result = await UserPanding(users);
             return result.ToList();
         }
 
-        public async Task<List<UsersPandingDto>> GetAllPatientPanding()
+        public async Task<List<UsersPendingDto>> GetAllPatientPending()
         {
             var users = await _userManager.Users.
                 Where(u => u.UserStatus == UserStatus.Pending && u.Patient != null).ToListAsync();
 
             if (users == null || !users.Any())
             {
-                return new List<UsersPandingDto>();
+                return new List<UsersPendingDto>();
             }
 
             var result = await UserPanding(users);
@@ -102,7 +102,7 @@ namespace MedicalApp.BusinessLogic.Services
             var result = await _userManager.UpdateAsync(user);
 
             if (!result.Succeeded)
-                throw new Exception("Failed to update user");
+                throw new FailedUpdateUserException("Failed to update user");
 
             await _mailService.SendEmailAsync(new EmailMessage
             {
@@ -134,7 +134,12 @@ namespace MedicalApp.BusinessLogic.Services
         public async Task<string> DisableUserAsync(string userId)
         {
             var user = await GetUserAsync(userId);
+
             user.LockoutEnd = DateTimeOffset.MaxValue;
+
+            user.UserStatus = UserStatus.Disabled;
+
+            await _userManager.UpdateAsync(user);
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)
                 throw new Exception("Failed to disable user");
@@ -152,7 +157,8 @@ namespace MedicalApp.BusinessLogic.Services
             var user = await GetUserAsync(userId);
 
             user.LockoutEnd = null;
-
+            user.UserStatus = UserStatus.Active;
+          await  _userManager.UpdateAsync(user);
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)
                 throw new EnableUserException("Failed to enable user");
@@ -208,11 +214,11 @@ namespace MedicalApp.BusinessLogic.Services
         private async Task<ApplicationUser> ToggleDeleteAsync(string userId, bool isDeleted)
         {
             var user = await GetUserAsync(userId);
-            user.IsDeleted = isDeleted;
             if (user.IsDeleted == isDeleted)
             {
                 throw new BadRequestException($"User already in this IsDelete = {isDeleted}");
             }
+            user.IsDeleted = isDeleted;
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)
                 throw new ToggleDeleteUserException("Failed to delete user");
@@ -230,13 +236,13 @@ namespace MedicalApp.BusinessLogic.Services
         }
 
 
-        private async Task<List<UsersPandingDto>> UserPanding(List<ApplicationUser> users)
+        private async Task<List<UsersPendingDto>> UserPanding(List<ApplicationUser> users)
         {
-            var result = new List<UsersPandingDto>();
+            var result = new List<UsersPendingDto>();
             foreach (var user in users)
             {
                 var roles = await _userManager.GetRolesAsync(user);
-                result.Add(new UsersPandingDto
+                result.Add(new UsersPendingDto
                 {
                     UserId = user.Id,
                     Email = user.Email!,

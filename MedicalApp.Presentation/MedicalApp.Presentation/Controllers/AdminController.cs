@@ -22,9 +22,26 @@
         [HttpGet("pending-users")]
         public async Task<IActionResult> GetAllUserPanding()
         {
-            var users = await _userManagementService.GetAllUserPandingAsync();
+            var users = await _userManagementService.GetAllUserPendingAsync();
             return Ok(users);
         }
+
+        [HttpGet("pending-doctors")]
+        public async Task<IActionResult> GetAllDoctorPanding()
+        {
+            var users = await _userManagementService.GetAllDoctorPending();
+            return Ok(users);
+        }
+
+        [HttpGet("pending-patients")]
+        public async Task<IActionResult> GetAllPatientPanding()
+        {
+            var users = await _userManagementService.GetAllPatientPending();
+            return Ok(users);
+
+        }
+
+
 
         [HttpPut("approve/{userId}")]
         public async Task<IActionResult> ApproveUser(string userId)
@@ -66,19 +83,6 @@
             return Ok(result);
         }
 
-        [HttpGet("pending-doctors")]
-        public async Task<IActionResult> GetAllDoctorPanding()
-        {
-            var users = await _userManagementService.GetAllDoctorPanding();
-            return Ok(users);
-        }
 
-        [HttpGet("pending-patients")]
-        public async Task<IActionResult> GetAllPatientPanding()
-        {
-            var users = await _userManagementService.GetAllPatientPanding();
-            return Ok(users);
-
-        }
     }
 }

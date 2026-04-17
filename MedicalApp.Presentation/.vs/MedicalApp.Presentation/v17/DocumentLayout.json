@@ -3,26 +3,14 @@
   "WorkspaceRootPath": "D:\\LungCare\\MedicalApp.Presentation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\services\\usermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\iservices\\iusermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\admindtos\\userspandingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260415092337_AddColumCreatedAtInApplicationUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\admindtos\\getusersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\dbcontexts\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\enums\\userstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,92 +25,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "MedicalApp.Presentation\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "MedicalApp.Presentation\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAA/wFMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T09:58:00.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsersPandingDto.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\UsersPandingDto.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\UsersPandingDto.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\UsersPandingDto.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\UsersPandingDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T09:39:56.38Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "MedicalApp.Presentation\\appsettings.json",
+              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\appsettings.json",
+              "RelativeToolTip": "MedicalApp.Presentation\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-17T16:05:58.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IUserManagementService.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IUserManagementService.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\IServices\\IUserManagementService.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IUserManagementService.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\IServices\\IUserManagementService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Title": "UserStatus.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
+              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T09:38:31.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20260415092337_AddColumCreatedAtInApplicationUser.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260415092337_AddColumCreatedAtInApplicationUser.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260415092337_AddColumCreatedAtInApplicationUser.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Migrations\\20260415092337_AddColumCreatedAtInApplicationUser.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\Migrations\\20260415092337_AddColumCreatedAtInApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T09:23:38.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationUser.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationUser.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\DBContexts\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T09:20:06.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GetUsersDTo.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\GetUsersDTo.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\GetUsersDTo.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\GetUsersDTo.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\AdminDtos\\GetUsersDTo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T09:00:33.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-16T09:10:06.059Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserManagementService.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\UserManagementService.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\UserManagementService.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\UserManagementService.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\UserManagementService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMUAAAAIAAAAAAAAAA==",
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T08:58:55.394Z",
+              "WhenOpened": "2026-04-16T09:02:13.441Z",
               "EditorCaption": ""
             }
           ]
