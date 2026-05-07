@@ -1,6 +1,4 @@
-﻿using MedicalApp.BusinessLogic.Ai;
-
-namespace MedicalApp.BusinessLogic.Services
+﻿namespace MedicalApp.BusinessLogic.Services
 {
     public class LungRiskService :ILungRiskService
     {

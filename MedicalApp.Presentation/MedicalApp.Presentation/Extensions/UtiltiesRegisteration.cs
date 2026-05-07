@@ -4,7 +4,7 @@
     {
         public static void AddUtilities(this IServiceCollection services)
         {
-            services.AddScoped<IImageService,ImageService >();
+            services.AddScoped<IFileService,FileService >();
         }
     }
 }

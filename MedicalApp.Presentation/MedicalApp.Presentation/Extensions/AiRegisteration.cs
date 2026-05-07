@@ -1,4 +1,6 @@
-﻿namespace MedicalApp.Presentation.Extensions
+﻿using MedicalApp.BusinessLogic.AboutOfModelsAi.AboutOfXrayAnalysis;
+
+namespace MedicalApp.Presentation.Extensions
 {
     public static class AiRegisteration
     {
@@ -10,6 +12,8 @@
             });
             services.AddHttpClient<IGenericAiClient, GenericAiClient>();
             services.AddScoped<IXrayService, XrayService>();
+            services.AddScoped<ICoughService, CoughService>();
+            services.AddScoped<IStethoscopeService, StethoscopeService>();  
         }
     }
 }

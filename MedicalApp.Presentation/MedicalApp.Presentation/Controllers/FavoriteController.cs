@@ -1,5 +1,4 @@
-﻿using MedicalApp.BusinessLogic.DTOs.FavoritePostsDto;
-
+﻿
 namespace MedicalApp.Presentation.Controllers
 {
     [Route("api/[controller]")]

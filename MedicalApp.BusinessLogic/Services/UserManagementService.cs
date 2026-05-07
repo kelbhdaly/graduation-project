@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace MedicalApp.BusinessLogic.Services
+﻿namespace MedicalApp.BusinessLogic.Services
 {
     internal class UserManagementService : IUserManagementService
     {

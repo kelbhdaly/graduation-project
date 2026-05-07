@@ -3,14 +3,35 @@
   "WorkspaceRootPath": "D:\\LungCare\\MedicalApp.Presentation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|d:\\lungcare\\medicalapp.presentation\\medicalapp.presentation\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{770CB748-E40C-4E66-BDA1-53D147D7FBFB}|MedicalApp.Presentation\\MedicalApp.Presentation.csproj|solutionrelative:medicalapp.presentation\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72F4FCB8-EB49-499A-8D54-D755B872950E}|..\\MedicalApp.DataAccess\\MedicalApp.DataAccess.csproj|d:\\lungcare\\medicalapp.dataaccess\\data\\enums\\userstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\dashboarddtos\\stethoscopedashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\dashboarddtos\\dashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\extensionmethod\\businesslogicservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\iservices\\idashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\dashboarddtos\\lungriskdashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\dashboarddtos\\xraydashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE29EF5A-A74F-4F40-9DEB-18A7BB01E887}|..\\MedicalApp.BusinessLogic\\MedicalApp.BusinessLogic.csproj|d:\\lungcare\\medicalapp.businesslogic\\dtos\\dashboarddtos\\coughdashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,45 +41,129 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\appsettings.json",
-              "RelativeDocumentMoniker": "MedicalApp.Presentation\\appsettings.json",
-              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\appsettings.json",
-              "RelativeToolTip": "MedicalApp.Presentation\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-17T16:05:58.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserStatus.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
-              "RelativeToolTip": "..\\MedicalApp.DataAccess\\Data\\Enums\\UserStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "BusinessLogicServices.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\ExtensionMethod\\BusinessLogicServices.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\ExtensionMethod\\BusinessLogicServices.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\ExtensionMethod\\BusinessLogicServices.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\ExtensionMethod\\BusinessLogicServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T09:10:06.059Z"
+              "WhenOpened": "2026-04-30T11:11:39.275Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
-              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
-              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\AuthenticationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAAAAAAAAAAAA==",
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "MedicalApp.Presentation\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.Presentation\\MedicalApp.Presentation\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "MedicalApp.Presentation\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T09:02:13.441Z",
+              "WhenOpened": "2026-04-30T11:10:31.546Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "globalUsing.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\globalUsing.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\globalUsing.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\globalUsing.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\globalUsing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T10:50:25.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardService.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\DashboardService.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\Services\\DashboardService.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\Services\\DashboardService.cs*",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\Services\\DashboardService.cs*",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowFgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T10:06:59.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IDashboardService.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IDashboardService.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\IServices\\IDashboardService.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\IServices\\IDashboardService.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\IServices\\IDashboardService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T10:05:12.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StethoscopeDashboardDto.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\StethoscopeDashboardDto.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\StethoscopeDashboardDto.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\StethoscopeDashboardDto.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\StethoscopeDashboardDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T10:03:31.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "XrayDashboardDto.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\XrayDashboardDto.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\XrayDashboardDto.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\XrayDashboardDto.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\XrayDashboardDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T10:02:33.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CoughDashboardDto.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\CoughDashboardDto.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\CoughDashboardDto.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\CoughDashboardDto.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\CoughDashboardDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T10:01:47.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LungRiskDashboardDto.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\LungRiskDashboardDto.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\LungRiskDashboardDto.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\LungRiskDashboardDto.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\LungRiskDashboardDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T09:58:55.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashboardDto.cs",
+              "DocumentMoniker": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\DashboardDto.cs",
+              "RelativeDocumentMoniker": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\DashboardDto.cs",
+              "ToolTip": "D:\\LungCare\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\DashboardDto.cs",
+              "RelativeToolTip": "..\\MedicalApp.BusinessLogic\\DTOs\\DashboardDtos\\DashboardDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T09:58:19.466Z"
             }
           ]
         },

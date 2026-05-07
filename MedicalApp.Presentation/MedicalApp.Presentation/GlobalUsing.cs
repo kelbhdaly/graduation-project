@@ -18,6 +18,9 @@ global using Microsoft.AspNetCore.Authorization;
 global using MedicalApp.Presentation.CustomMiddleWares;
 global using System.IdentityModel.Tokens.Jwt;
 global using MedicalApp.BusinessLogic.Services;
+global using MedicalApp.BusinessLogic.DTOs.FavoritePostsDto;
+global using MedicalApp.BusinessLogic.DTOs.AiDtos;
+
 
 
 

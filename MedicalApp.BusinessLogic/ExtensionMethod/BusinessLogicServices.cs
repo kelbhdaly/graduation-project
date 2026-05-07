@@ -16,6 +16,7 @@
             services.AddScoped<IAuthenticationService, AuthenticationService>();  
             services.AddScoped<IUserManagementService, UserManagementService>();
             services.AddScoped<ILungRiskService, LungRiskService>();
+            services.AddScoped<IDashboardService, DashboardService>();
 
         }
     }

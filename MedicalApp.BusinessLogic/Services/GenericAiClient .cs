@@ -1,8 +1,4 @@
-﻿
-using System.Net.Http.Headers;
-using System.Text.Json;
-
-namespace MedicalApp.BusinessLogic.Services
+﻿namespace MedicalApp.BusinessLogic.Services
 {
     public class GenericAiClient : IGenericAiClient
     {
@@ -13,7 +9,7 @@ namespace MedicalApp.BusinessLogic.Services
             _httpClient = httpClient;
         }
 
-        public async Task<TResponse> PostImageAsync<TResponse>(string url, IFormFile file)
+        public async Task<TResponse> PostFileAsync<TResponse>(string url, IFormFile file)
         {
             using var content = new MultipartFormDataContent();
 

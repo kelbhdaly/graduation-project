@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace MedicalApp.BusinessLogic.Services
+﻿namespace MedicalApp.BusinessLogic.Services
 {
     public class AuthenticationService : IAuthenticationService
     {

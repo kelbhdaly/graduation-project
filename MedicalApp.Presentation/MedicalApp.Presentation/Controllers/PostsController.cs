@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-namespace MedicalApp.Presentation.Controllers
+﻿namespace MedicalApp.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

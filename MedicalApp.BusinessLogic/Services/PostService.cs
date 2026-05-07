@@ -2,11 +2,11 @@
 {
     public class PostService : IPostService
     {
-        private readonly IImageService _imageService;
+        private readonly IFileService _imageService;
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public PostService(IImageService imageService
+        public PostService(IFileService imageService
            , ApplicationDbContext context, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _imageService = imageService;

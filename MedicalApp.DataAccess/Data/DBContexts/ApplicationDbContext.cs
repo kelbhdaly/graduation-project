@@ -1,4 +1,6 @@
-﻿namespace MedicalApp.DataAccess.Data.DBContexts
+﻿using System.Reflection;
+
+namespace MedicalApp.DataAccess.Data.DBContexts
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -6,6 +8,11 @@
         {
 
 
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
 
         #region Tables In DataBase
@@ -19,6 +26,8 @@
         public DbSet<OtpCode> OtpCodes { get; set; }
         public DbSet<XrayAnalysis> XrayAnalysisResults { get; set; }
         public DbSet<LungRiskAnalysis> LungRiskAnalyses { get; set; }
+        public DbSet<CoughAnalysis> CoughAnalyses { get; set; }
+        public DbSet<StethoscopeAnalysis> StethoscopeAnalyses { get; set; }
         #endregion
 
     }

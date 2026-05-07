@@ -481,6 +481,84 @@
         }
       }
     },
+    "/api/Cough/analyze": {
+      "post": {
+        "tags": [
+          "Cough"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "audio": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "audio": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cough/history": {
+      "get": {
+        "tags": [
+          "Cough"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Dashboard": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Dashboard/{userId}": {
+      "post": {
+        "tags": [
+          "Dashboard"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Favorite": {
       "post": {
         "tags": [
@@ -730,6 +808,99 @@
         }
       }
     },
+    "/api/Stethoscope/analyze": {
+      "post": {
+        "tags": [
+          "Stethoscope"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Audio": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "PatientId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Audio": {
+                  "style": "form"
+                },
+                "PatientId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StethoscopeResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StethoscopeResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StethoscopeResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Stethoscope/history": {
+      "get": {
+        "tags": [
+          "Stethoscope"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HistoryStethoscopeAnalysisDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HistoryStethoscopeAnalysisDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HistoryStethoscopeAnalysisDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/XRay/xray": {
       "post": {
         "tags": [
@@ -897,6 +1068,28 @@
         "type": "integer",
         "format": "int32"
       },
+      "HistoryStethoscopeAnalysisDto": {
+        "type": "object",
+        "properties": {
+          "audioUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "type": "string",
+            "nullable": true
+          },
+          "confidence": {
+            "type": "number",
+            "format": "double"
+          },
+          "analyzedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "IsMarried": {
         "enum": [
           1,
@@ -1054,6 +1247,28 @@
         "type": "object",
         "properties": {
           "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StethoscopeResponseDto": {
+        "type": "object",
+        "properties": {
+          "audioUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "type": "string",
+            "nullable": true
+          },
+          "confidence": {
+            "type": "number",
+            "format": "double"
+          },
+          "patientId": {
             "type": "string",
             "nullable": true
           }

@@ -23,7 +23,15 @@ global using MedicalApp.DataAccess.HandleExceptions;
 global using MedicalApp.BusinessLogic.Profiles;
 global using MedicalApp.BusinessLogic.DTOs.AdminDtos;
 global using MedicalApp.BusinessLogic.DTOs.AiDtos;
-
+global using MedicalApp.BusinessLogic.AboutOfModelsAi.AboutOfCoughAnalyses;
+global using MedicalApp.Infrastructure.RolesInApplication;
+global using System.Net.Http.Headers;
+global using System.Text.Json;
+global using MedicalApp.BusinessLogic.AboutOfModelsAi.AboutOfLungRiskAnalyses;
+global using MedicalApp.BusinessLogic.AboutOfModelsAi.AboutOfStethoscopeAnalysis;
+global using System.Data;
+global using MedicalApp.BusinessLogic.AboutOfModelsAi.AboutOfXrayAnalysis;
+global using MedicalApp.BusinessLogic.DTOs.DashboardDtos;
 
 
 

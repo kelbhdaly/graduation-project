@@ -290,6 +290,58 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MedicalApp.Presentation.Controllers.CoughController",
+    "Method": "Analyze",
+    "RelativePath": "api/Cough/analyze",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "audio",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.CoughController",
+    "Method": "GetHistory",
+    "RelativePath": "api/Cough/history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.DashboardController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/Dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.DashboardController",
+    "Method": "GetDashboardByDoctor",
+    "RelativePath": "api/Dashboard/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MedicalApp.Presentation.Controllers.FavoriteController",
     "Method": "AddToFavorites",
     "RelativePath": "api/Favorite",
@@ -439,6 +491,57 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.StethoscopeController",
+    "Method": "AnalyzeAsync",
+    "RelativePath": "api/Stethoscope/analyze",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Audio",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "PatientId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MedicalApp.BusinessLogic.DTOs.AiDtos.StethoscopeResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MedicalApp.Presentation.Controllers.StethoscopeController",
+    "Method": "GetAnalysisByPatientIdAsync",
+    "RelativePath": "api/Stethoscope/history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MedicalApp.BusinessLogic.DTOs.AiDtos.HistoryStethoscopeAnalysisDto, MedicalApp.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "MedicalApp.Presentation.Controllers.XRayController",

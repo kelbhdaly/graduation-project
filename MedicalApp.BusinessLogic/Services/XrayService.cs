@@ -3,13 +3,13 @@
     public class XrayService : IXrayService
     {
         private readonly IGenericAiClient _aiClient;
-        private readonly IImageService _imageService;
+        private readonly IFileService _imageService;
         private readonly ApplicationDbContext _context;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public XrayService(
             IGenericAiClient aiClient,
-            IImageService imageService,
+            IFileService imageService,
             ApplicationDbContext context,
             IHttpContextAccessor httpContextAccessor)
         {
@@ -31,7 +31,7 @@
                 throw new Exception("Failed to upload image");
 
             //call AI
-            var result = await _aiClient.PostImageAsync<XrayApiResult>(
+            var result = await _aiClient.PostFileAsync<XrayApiResult>(
                 "https://ahmed99a-xray-api.hf.space/predict",
                 image);
 

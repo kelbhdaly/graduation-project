@@ -96,6 +96,53 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.CoughAnalysis", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AudioUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClinicalUse")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("CovidProbability")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Disclaimer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("NotCovidProbability")
+                        .HasColumnType("float");
+
+                    b.Property<double>("RiskScore")
+                        .HasColumnType("float");
+
+                    b.Property<string>("SupportLabel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CoughAnalyses");
+                });
+
             modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.Doctor", b =>
                 {
                     b.Property<int>("Id")
@@ -397,6 +444,45 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.StethoscopeAnalysis", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AudioUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Confidence")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DoctorId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("PatientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Result")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("StethoscopeAnalyses");
+                });
+
             modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.XrayAnalysis", b =>
                 {
                     b.Property<int>("Id")
@@ -572,6 +658,17 @@ namespace MedicalApp.DataAccess.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.CoughAnalysis", b =>
+                {
+                    b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.Doctor", b =>
                 {
                     b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "ApplicationUser")
@@ -647,6 +744,25 @@ namespace MedicalApp.DataAccess.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.StethoscopeAnalysis", b =>
+                {
+                    b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("MedicalApp.DataAccess.Data.DBContexts.ApplicationUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("MedicalApp.DataAccess.Data.Models.XrayAnalysis", b =>

@@ -1,4 +1,6 @@
-﻿namespace MedicalApp.BusinessLogic.IServices
+﻿using MedicalApp.BusinessLogic.AboutOfModelsAi.AboutOfXrayAnalysis;
+
+namespace MedicalApp.BusinessLogic.IServices
 {
     public interface IXrayAiClient
     {

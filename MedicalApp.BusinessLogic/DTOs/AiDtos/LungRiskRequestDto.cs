@@ -1,6 +1,4 @@
-﻿using MedicalApp.BusinessLogic.Ai;
-
-namespace MedicalApp.BusinessLogic.DTOs.AiDtos
+﻿namespace MedicalApp.BusinessLogic.DTOs.AiDtos
 {
     public class LungRiskRequestDto
     {

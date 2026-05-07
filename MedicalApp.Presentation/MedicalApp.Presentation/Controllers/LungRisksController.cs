@@ -1,6 +1,4 @@
-﻿using MedicalApp.BusinessLogic.DTOs.AiDtos;
-
-namespace MedicalApp.Presentation.Controllers
+﻿namespace MedicalApp.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

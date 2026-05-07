@@ -1,3 +1,11 @@
+wwwroot\audio\cough\36140f25-5913-4291-bde5-747456c459c5.ogg
+wwwroot\audio\cough\5ddc896c-e131-439e-8fc8-3b4f07c1f029.ogg
+wwwroot\audio\cough\fecfdf0b-14ef-4017-b3e5-a26778b751be.ogg
+wwwroot\audio\stethoscope\1675a8d1-84a6-4dc6-9539-7db7798365b0.ogg
+wwwroot\audio\stethoscope\58ea0c62-4b36-4618-9023-6254ed1131df.wav
+wwwroot\audio\stethoscope\85362504-aa12-4da3-8473-cef44eefe05a.wav
+wwwroot\audio\stethoscope\8858d09a-5313-49c2-aa10-a4f2d77e6901.wav
+wwwroot\audio\stethoscope\b006e363-9d50-4c32-a837-404bda6f218d.wav
 wwwroot\Images\Posts\0e6a59f6-e826-4af1-899f-999b9f78ec56.jpeg
 wwwroot\Images\Posts\15b893f8-8945-43ce-9642-4b2a17be6e80.jpeg
 wwwroot\Images\Posts\16cf2827-99d8-4a9b-a7ce-eca14dbb2ec6.jpeg
